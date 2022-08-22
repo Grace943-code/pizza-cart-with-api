@@ -17,6 +17,9 @@
 
 </head>
 <style>
+    .cover{
+    background-color: yellow;
+}
     .Cart {
         /* background-color: aqua; */
         background-color: olivedrab;
@@ -69,11 +72,16 @@
     /* color: whi; */
     padding: 1em;
 }
+.mess{
+    padding: 1em;
+    display:block;
+}
 
 .details{
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
     padding: 2.5em;
     font-size: 18px;
 }
@@ -136,28 +144,30 @@
 </style>
 
 <body>
-    <img class="cart" src="img/scooter.jpg" height="100" alt="">
-    <div x-data="pizzaCartWithAPIWidget">
+    
+    <div class="cover" x-data="pizzaCartWithAPIWidget">
+        
         <div class="Carts">
-            <div x-text="message"></div>
-            <div x-text="cartId"></div>
-            <h2>Place your order</h2>
+            <img class="cart" src="img/scooter.jpg" height="100" alt="">
+            
+            <!-- <h2>Place your order</h2> -->
             <div class="details">
-                <div class="customer">
-                    Who is buying the pizzas: <input type="text" x-model="username">
-                </div>
-                <div class="numP">
-                    <strong x-text="pizzas.length"></strong> 
-                </div>
-    
                 
-    
-                <div>
-    
-                    <div class="tota">
-                        Cart total : <strong x-text="cart.total"></strong>
-                    </div>
+                <div class='customer'>
+                    Customer name: <input type='text' placeholder='User name' x-model='username'>
                 </div>
+    
+                <div class='numP'> Number of pizzas available: <strong x-text='pizzas.length'></strong>
+                </div>
+    
+                <div class='tot'>
+                        Cart total: R <strong x-text="cart.total.toFixed(2)"></strong>
+                </div>
+                <div class="mess">
+                    <div x-text="message"></div>
+                    <div x-text="cartId"></div>
+                </div>
+                
             </div>
 
             
@@ -189,9 +199,7 @@
                 </template>
             </table>
         </div>
-        <!-- <div class="cartTotal">
-            Cart Total: <strong x-text="cart.total.toFixed(2)"></strong>
-        </div> -->
+       
         <div class="Carts">
             <table>
                 <tr>
