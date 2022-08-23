@@ -81,7 +81,10 @@ document.addEventListener('alpine:init', () => {
             pay() {
                 const params = {
                   cart_code : this.cartId,
+                  amount: this.paymentAmount
+                  
                 }
+                console.log(params)
                 axios
                   .post('https://pizza-cart-api.herokuapp.com/api/pizza-cart/pay', params)
                   .then(() => {
