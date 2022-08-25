@@ -40,7 +40,7 @@ document.addEventListener('alpine:init', () => {
             },
            
             message : 'Eating pizzas',
-            username: 'Grace Masuku',
+            username: 'Grace',
             pizzas : [],
             cartId: '',
             cart: { total: 0},
@@ -100,11 +100,13 @@ document.addEventListener('alpine:init', () => {
                               this.paymentAmount = 0;
                               this.paymentMessage = '';
                               this.message = '';
+                            //   window.location.reload()
                           }, 3000);
                       }else{
                           this.paymentMessage = 'Sorry - You do not have enough money!'
                           setTimeout(() => {
                               this.cart.total = '';
+                              
                               
                           }, 3000);
                       }

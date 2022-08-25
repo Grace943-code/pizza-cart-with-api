@@ -17,75 +17,85 @@
 
 </head>
 <style>
-    .cover{
-    background-color: yellow;
-}
+    .cover {
+        background-color: yellow;
+    }
+
     .Cart {
         /* background-color: aqua; */
         background-color: olivedrab;
         width: 99%;
         padding-bottom: 20px;
-        
+
 
     }
 
     .Carts {
         background-color: orange;
         width: 100%;
-        
+
     }
+
     /* .cart{
         background-color: orange;
         width: 400px;
         margin-bottom: 9em;
         margin-left: 27%;
     } */
-    .listPizzas{
-    padding-bottom: 3em;
+    .listPizzas {
+        padding-bottom: 3em;
     }
 
-    table, th, td {
-    margin-left: auto;
-    margin-right: auto;
-    column-width: 10em;
-    border: 1px solid;
-    border-collapse: collapse;
-    border-color:grey;
-    text-align: center;
-    height: 3em;
-    color: white;
-    font-size: 19px;
-}
-.cart {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    border-radius: 50%;
-    width: auto;
-}
-/* .cover{
+    table,
+    th,
+    td {
+        margin-left: auto;
+        margin-right: auto;
+        column-width: 10em;
+        border: 1px solid;
+        border-collapse: collapse;
+        border-color: grey;
+        text-align: center;
+        height: 3em;
+        color: white;
+        font-size: 19px;
+    }
+
+    .cart {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-radius: 50%;
+        width: auto;
+    }
+
+    /* .cover{
     background-color: cadetblue;
 } */
 
-.customer, .numP, .tot{
-    /* color: whi; */
-    padding: 1em;
-}
-.mess{
-    padding: 1em;
-    display:block;
-}
+    .customer,
+    .numP,
+    .tot {
+        /* color: whi; */
+        padding: 1em;
+    }
 
-.details{
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    padding: 2.5em;
-    font-size: 18px;
-}
-.pizza-block {
+    .mess {
+        padding: 1em;
+        display: block;
+    }
+
+    .details {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        padding: 2.5em;
+        font-size: 18px;
+    }
+
+    .pizza-block {
         width: 100%;
         border: 1em;
         font-style: italic;
@@ -95,137 +105,137 @@
         padding-top: 5px;
         /* background-color: darkolivegreen; */
     }
-.pizza-fill1 {
-    background-color: chartreuse;
-    /* text-decoration: brown; */
-}
-.pizza-fill2 {
-    background-color: yellow;
-    /* text-decoration: brown; */
-}
 
-.pizza-fill3 {
-    background-color: greenyellow;
-    /* text-decoration: brown; */
-}
-.small-img {
-    width: 160px;
-    height: 160px;
-}
+    .pizza-fill1 {
+        background-color: chartreuse;
+        /* text-decoration: brown; */
+    }
 
-.medium-img {
-    width: 180px;
-    height: 180px;
-}
+    .pizza-fill2 {
+        background-color: yellow;
+        /* text-decoration: brown; */
+    }
 
-.large-img {
-    width: 200px;
-    height: 200px;
-}
-.pizza {
-    flex: 1;
-    /* color:black; */
-    /* text-shadow: 2px 2px mediumseagreen; */
-    margin: 0.3em;
-    padding: 1em;
-    font-size: medium;
-    border: 1em solid;
-    border-color:darkgoldenrod;
-    width: 292.15px;
-    height: 450.69px;
-    position: relative;
-    font-family:Arial, Helvetica, sans-serif;
-}
-.pizza-fill {
-    background-color:yellow;
-    /* text-decoration: brown; */
-}
+    .pizza-fill3 {
+        background-color: greenyellow;
+        /* text-decoration: brown; */
+    }
 
+    .small-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .medium-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .large-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .pizza {
+        flex: 1;
+        /* color:black; */
+        /* text-shadow: 2px 2px mediumseagreen; */
+        margin: 0.3em;
+        padding: 1em;
+        font-size: medium;
+        border: 1em solid;
+        border-color: darkgoldenrod;
+        width: 292.15px;
+        height: 450.69px;
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .pizza-fill {
+        background-color: yellow;
+        /* text-decoration: brown; */
+    }
+    .message{
+        color: green;
+    }
+    
 </style>
 
 <body>
-    
+
     <div class="cover" x-data="pizzaCartWithAPIWidget">
-        
-        <div class="Carts">
+
+        <div class="Carts"  x-show="cart.total > 0">
             <img class="cart" src="img/scooter.jpg" height="100" alt="">
-            
+
             <!-- <h2>Place your order</h2> -->
             <div class="details">
-                
+
                 <div class='customer'>
                     Customer name: <input type='text' placeholder='User name' x-model='username'>
                 </div>
-    
+
                 <div class='numP'> Number of pizzas available: <strong x-text='pizzas.length'></strong>
                 </div>
-    
+
                 <div class='tot'>
-                        Cart total: R <strong x-text="cart.total.toFixed(2)"></strong>
+                    Cart total: R <strong x-text="cart.total.toFixed(2)"></strong>
                 </div>
                 <div class="mess">
                     <div x-text="message"></div>
                     <div x-text="cartId"></div>
                 </div>
-                
+
             </div>
 
-            
-        </div>
-
-
-        <div class=Carts>
-            <table>
-                <tr>
-                    <th>Flavour</th>
-                    <th>Remove</th>
-                    <th>Qty</th>
-                    <th>Add</th>
-                    <th>Total</th>
-                </tr>
-                <template x-for="pizza in cart.pizzas">
+            <div>
+                <table>
                     <tr>
-
-                        <td x-text="pizza.flavour"></td>
-                        <td>
-                            <button x-on:click="remove(pizza)">-</button>
-                        </td>
-                        <td x-text="pizza.qty"></td>
-                        <td>
-                            <button x-on:click="add(pizza)">+</button>
-                        </td>
-                        <td x-text="pizza.total"></td>
+                        <th>Flavour</th>
+                        <th>Remove</th>
+                        <th>Qty</th>
+                        <th>Add</th>
+                        <th>Total</th>
                     </tr>
-                </template>
-            </table>
-        </div>
-       
-        <div class="Carts">
+                    <template x-for="pizza in cart.pizzas">
+                        <tr>
+
+                            <td x-text="pizza.flavour"></td>
+                            <td>
+                                <button x-on:click="remove(pizza)">-</button>
+                            </td>
+                            <td x-text="pizza.qty"></td>
+                            <td>
+                                <button x-on:click="add(pizza)">+</button>
+                            </td>
+                            <td x-text="pizza.total"></td>
+                        </tr>
+                    </template>
+                </table>
+            </div>
+
             <table>
                 <tr>
                     <td class="message" x-text="paymentMessage">
-                    
+
                     </td>
                     <td>
                         <label for="input">Payment Amount</label>
-                        <input class="input" type="number" placeholder="Payment Amount" 
-                        x-model="paymentAmount"></input>
+                        <input class="input" type="number" placeholder="Payment Amount" x-model="paymentAmount"></input>
                     </td>
-                    
-                        <td>
-                            <button class="payNow" @click="pay">Pay</button>
-                        </td>
-                   
-                    
+
+                    <td>
+                        <button class="payNow" @click="pay">Pay</button>
+                    </td>
+
+
                 </tr>
             </table>
-        </div>
-        <div class="Carts">
 
         </div>
         <div class="pizza-block">
             <div class="pizza pizza-fill1">
-                
+
                 <img align="end" class="small-img" src="pizzaimage.png" alt="">
                 <h3>Small pizza</h3>
                 <h4>R39.99</h4>
@@ -238,28 +248,28 @@
             </div>
 
             <div class="pizza pizza-fill2">
-                    <img align="end" class="medium-img" src="pizzaimage.png" alt="">
-                    <h3>Medium pizza</h3>
-                    <h4>R79.99</h4>
-                    <div>
-                        medium margeritha pizza with 3 toppings max. 2 or less meat topping. 3 or less other toppings.
-                    </div>
-                    <button class="Order btn" x-on:click="mediumTotal += 79.99; mediumQty +=1 ">
-                        Order</button>
+                <img align="end" class="medium-img" src="pizzaimage.png" alt="">
+                <h3>Medium pizza</h3>
+                <h4>R79.99</h4>
+                <div>
+                    medium margeritha pizza with 3 toppings max. 2 or less meat topping. 3 or less other toppings.
+                </div>
+                <button class="Order btn" x-on:click="mediumTotal += 79.99; mediumQty +=1 ">
+                    Order</button>
             </div>
 
             <div class="pizza pizza-fill3">
-                    <img align="end" class="large-img" src="pizzaimage.png" alt="">
-                    <h3>Large pizza</h3>
-                    <h4>R168.99</h4>
-                    <div>
-                        large margeritha pizza with 3 toppings max. 3 meat toppings max. 3 or less other toppings.medium
-                        margeritha pizza with 3 toppings max. 2 or less meat topping. 3 or less other toppings.
-                    </div>
-                    <button class="Order btn" x-on:click="largeTotal += 168.99; largeQty +=1 ">
-                        Order</button>
+                <img align="end" class="large-img" src="pizzaimage.png" alt="">
+                <h3>Large pizza</h3>
+                <h4>R168.99</h4>
+                <div>
+                    large margeritha pizza with 3 toppings max. 3 meat toppings max. 3 or less other toppings.medium
+                    margeritha pizza with 3 toppings max. 2 or less meat topping. 3 or less other toppings.
+                </div>
+                <button class="Order btn" x-on:click="largeTotal += 168.99; largeQty +=1 ">
+                    Order</button>
             </div>
-                
+
         </div>
 
         <div class="listPizzas">
